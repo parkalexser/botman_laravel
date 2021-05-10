@@ -8,13 +8,15 @@ $botman = resolve('botman');
 
 
 $botman->hears('foo', function($bot){
-	Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
-	  ->oneTimeKeyboard(true)
-	  ->addRow( 
-	     KeyboardButton::create("Да")->callbackData('first_inline'),
-	     KeyboardButton::create("Нет")->callbackData('second_inline')
-	  )
-	  ->toArray();
+	$bot->reply('Hello');
+	$bot->ask('Hello! What is your firstname?', function(Answer $answer) {
+    // Save result
+    // $this->firstname = $answer->getText();
+
+    // $this->say('Nice to meet you '.$this->firstname);
+    // $this->askEmail();
+});
+	
 });
 
 $botman->hears('info', function ($bot) {
@@ -22,6 +24,8 @@ $botman->hears('info', function ($bot) {
 });
 
 $botman->hears('Start conversation', BotManController::class.'@startConversation');
+
+
 
 
 
