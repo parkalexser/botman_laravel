@@ -12,15 +12,7 @@ $botman->hears('hi', function($bot){
 	$bot->ask('What is your name', function ($answer, $conversation){
         $conversation->say('Nice to meet you '.$answer->getText());
     },
-        KeyboardButton::create("Не знаю")->requestContact('true')->jsonSerialize(),
-        Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
-        ->oneTimeKeyboard(true)
-        ->addRow(
-            KeyboardButton::create("Да")->callbackData('first_inline'),
-            KeyboardButton::create("Нет")->callbackData('second_inline'),
-            KeyboardButton::create("Не знаю")->callbackData('third_inline')
-        )
-        ->toArray()
+        KeyboardButton::create("Send contact")->requestContact('true')->jsonSerialize()
     );
 });
 
@@ -30,7 +22,15 @@ $botman->hears('info', function ($bot) {
 
 $botman->hears('Start conversation', BotManController::class.'@startConversation');
 
-
+//,
+//Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
+//    ->oneTimeKeyboard(true)
+//    ->addRow(
+//        KeyboardButton::create("Да")->callbackData('first_inline'),
+//        KeyboardButton::create("Нет")->callbackData('second_inline'),
+//        KeyboardButton::create("Не знаю")->callbackData('third_inline')
+//    )
+//    ->toArray()
 
 
 
