@@ -12,14 +12,15 @@ $botman->hears('hi', function($bot){
 	$bot->ask('What is your name', function ($answer, $conversation){
         $conversation->say('Nice to meet you '.$answer->getText());
     },
-        KeyboardButton::create("Send contact")->requestContact(true),
-        Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
-        ->oneTimeKeyboard(true)
-        ->addRow(
-            KeyboardButton::create("Да")->callbackData('first_inline'),
-            KeyboardButton::create("Нет")->callbackData('second_inline')
-        )
-        ->toArray()
+        KeyboardButton::create("Send contact")->requestContact(true)
+//        ,
+//        Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
+//        ->oneTimeKeyboard(true)
+//        ->addRow(
+//            KeyboardButton::create("Да")->callbackData('first_inline'),
+//            KeyboardButton::create("Нет")->callbackData('second_inline')
+//        )
+//        ->toArray()
     );
 });
 
