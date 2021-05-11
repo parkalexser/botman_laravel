@@ -12,7 +12,7 @@ $botman->hears('hi', function($bot){
 	$bot->ask('What is your name', function ($answer, $conversation){
         $conversation->say('Nice to meet you '.$answer->getText());
     },
-        Keyboard::create()->type( Keyboard::TYPE_INLINE )
+        Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
            ->oneTimeKeyboard(true)
            ->addRow(
                KeyboardButton::create("Send contact")->callbackData('contact')->requestContact(true)
