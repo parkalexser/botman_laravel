@@ -14,6 +14,7 @@ $botman->hears('hi', function($bot){
     },
         Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
            ->oneTimeKeyboard(true)
+           ->resizeKeyboard(true)
            ->addRow(
                KeyboardButton::create("Send contact")->callbackData('contact')->requestContact(true)
            )
