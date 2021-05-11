@@ -10,7 +10,7 @@ $botman = resolve('botman');
 $botman->hears('hi', function($bot){
 	$bot->reply('Hello!');
 	$bot->ask('What is your name', function ($answer, $conversation){
-        $conversation->say(print_r($answer->contact->phone_number, true));
+        $conversation->say(print_r($answer->getValue(), true));
     },
         Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
            ->oneTimeKeyboard(true)
