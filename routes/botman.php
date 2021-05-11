@@ -6,6 +6,9 @@ use BotMan\Drivers\Telegram\Extensions\KeyboardButton;
 $botman = resolve('botman');
 // $botman = app('botman');
 
+$botman->receivesContact(function ($bot, $contact){
+    $bot->reply(\BotMan\BotMan\Messages\Outgoing\OutgoingMessage::create('I received')->withAttachment($contact[0]));
+});
 
 $botman->hears('hi', function($bot){
 	$bot->reply('Hello!');
