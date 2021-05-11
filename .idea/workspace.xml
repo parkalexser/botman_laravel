@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="75bd6b39-5889-4969-acc8-9e43492d7f46" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/botman.php" afterPath="$PROJECT_DIR$/routes/botman.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,11 +18,21 @@
       <file leaf-file-name="botman.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/botman.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+            <state relative-caret-position="180">
+              <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
               <folding>
                 <element signature="e#6#48#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Answer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/botman/botman/src/Messages/Incoming/Answer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1178">
+              <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,16 +77,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="laravel.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage/logs/laravel.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="1013" column="155" lean-forward="false" selection-start-line="1013" selection-start-column="35" selection-end-line="1013" selection-end-column="155" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ExampleConversation.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Conversations/ExampleConversation.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -89,11 +90,31 @@
       <file leaf-file-name="MyConversation.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Conversations/MyConversation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="405">
+              <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="43" />
               <folding>
                 <element signature="e#37#70#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConversationManager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/botman/botman/src/Commands/ConversationManager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="52" column="45" lean-forward="false" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IncomingMessage.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/botman/botman/src/Messages/Incoming/IncomingMessage.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="158" column="21" lean-forward="false" selection-start-line="158" selection-start-column="20" selection-end-line="158" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -106,6 +127,11 @@
       <find>se</find>
       <find>sendContact</find>
       <find>buildServicePayload</find>
+      <find>getUser</find>
+      <find>ge</find>
+      <find>getConta</find>
+      <find>getContac</find>
+      <find>getContact</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -291,7 +317,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
-    <property name="SearchEverywhereHistoryKey" value="ask&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="Answer&#9;null&#9;null&#10;ask&#9;null&#9;null" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -371,6 +397,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="75bd6b39-5889-4969-acc8-9e43492d7f46" name="Default" comment="" />
@@ -378,12 +407,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1620706446837</updated>
-      <workItem from="1620706448543" duration="15020000" />
+      <workItem from="1620706448543" duration="15919000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15020000" />
+    <option name="totallyTimeSpent" value="15919000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
@@ -468,14 +497,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Conversations/ExampleConversation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/botman/botman/src/BotMan.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1320">
@@ -536,20 +557,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Conversations/ExampleConversation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Conversations/MyConversation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="405">
+          <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="43" />
           <folding>
             <element signature="e#37#70#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/botman/botman/src/Commands/ConversationManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="52" column="45" lean-forward="false" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/botman/botman/src/Messages/Incoming/IncomingMessage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="158" column="21" lean-forward="false" selection-start-line="158" selection-start-column="20" selection-end-line="158" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/botman/botman/src/Messages/Incoming/Answer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1178">
+          <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/botman.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        <state relative-caret-position="180">
+          <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
           <folding>
             <element signature="e#6#48#0#PHP" expanded="true" />
           </folding>

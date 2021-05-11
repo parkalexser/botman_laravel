@@ -10,7 +10,7 @@ $botman = resolve('botman');
 $botman->hears('hi', function($bot){
 	$bot->reply('Hello!');
 	$bot->ask('What is your name', function ($answer, $conversation){
-        $conversation->say($answer->getContact());
+        $conversation->say($answer->getPhoneNumber());
     },
         Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
            ->oneTimeKeyboard(true)
@@ -37,8 +37,6 @@ $botman->hears('Start conversation', BotManController::class.'@startConversation
 //        KeyboardButton::create("Не знаю")->callbackData('third_inline')
 //    )
 //    ->toArray()
-
-
 
 
 ?>
