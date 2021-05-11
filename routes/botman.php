@@ -15,7 +15,7 @@ $botman->hears('hi', function($bot){
         Keyboard::create()->type( Keyboard::TYPE_INLINE )
            ->oneTimeKeyboard(true)
            ->addRow(
-               KeyboardButton::create("Send contact")->requestContact(true)
+               KeyboardButton::create("Send contact")->callbackData('contact')->requestContact(true)
            )
            ->toArray()
     );
