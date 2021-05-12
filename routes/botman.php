@@ -20,17 +20,17 @@ $botman->receivesImages(function($bot,$images) {
     }
 });
 
-$botman->receivesContact(function($bot, $contact) {
 
-    $phone = $contact->getPhoneNumber();
-    $bot->reply($phone);
-});
 
 
 $botman->hears('hi', function($bot){
 	$bot->reply('Hello!');
 	$bot->ask('What is your name', function ($answer, $conversation){
-        $conversation->say('Thank you '. $answer->getText());
+
+        $conversation->receivesContact(function($bot, $contact) {
+            $phone = $contact->getPhoneNumber();
+            $bot->reply('Thank you! Your phone is '.$phone);
+        });
     },
         Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
            ->oneTimeKeyboard(true)
