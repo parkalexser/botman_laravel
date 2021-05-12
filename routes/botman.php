@@ -7,8 +7,8 @@ $botman = resolve('botman');
 // $botman = app('botman');
 
 
-$botman->receivesContact(function ($bot, $contact){
-    $bot->reply(\BotMan\BotMan\Messages\Outgoing\OutgoingMessage::create('I received')->withAttachment($contact[0]));
+$botman->receivesAudio(function ($bot, $audio){
+    $bot->reply(\BotMan\BotMan\Messages\Outgoing\OutgoingMessage::create('I received')->withAttachment($audio[0]));
 });
 
 
