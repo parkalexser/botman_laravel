@@ -26,9 +26,9 @@ class MyConversation extends Conversation
 
         $this->ask($question, function ($answer){
 
-            $this->receivesContact(function ($bot, $contact){
-                $bot->reply(\BotMan\BotMan\Messages\Outgoing\OutgoingMessage::create('I received')->withAttachment($contact[0]));
-            });
+//            $this->receivesContact(function ($bot, $contact){
+//                $bot->reply(\BotMan\BotMan\Messages\Outgoing\OutgoingMessage::create('I received')->withAttachment($contact[0]));
+//            });
 
 //            if($answer->getValue() == 1){
 //                $user = $this->bot->getUser();
