@@ -2,13 +2,20 @@
 use App\Http\Controllers\BotManController;
 use BotMan\Drivers\Telegram\Extensions\Keyboard;
 use BotMan\Drivers\Telegram\Extensions\KeyboardButton;
+use BotMan\BotMan\Messages\Attachments\Audio;
 
 $botman = resolve('botman');
 // $botman = app('botman');
 
 
-$botman->receivesAudio(function ($bot, $audio){
-    $bot->reply(\BotMan\BotMan\Messages\Outgoing\OutgoingMessage::create('I received')->withAttachment($audio[0]));
+$botman->receivesAudio(function ($bot, $audios){
+//    $bot->reply(\BotMan\BotMan\Messages\Outgoing\OutgoingMessage::create('I received')->withAttachment($audio[0]));
+    foreach ($audios as $audio) {
+
+//        $url = $audio->getUrl(); // The direct url
+//        $payload = $audio->getPayload(); // The original payload
+        $bot->reply('url-'.$audio->getUrl().'payload-'.$audio->getPayload());
+    }
 });
 
 
