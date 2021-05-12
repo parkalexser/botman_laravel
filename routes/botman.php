@@ -20,6 +20,12 @@ $botman->receivesImages(function($bot,$images) {
     }
 });
 
+$botman->receivesContact(function($bot, $contact) {
+
+    $phone = $contact->getPhoneNumber();
+    $bot->reply($phone);
+});
+
 
 $botman->hears('hi', function($bot){
 	$bot->reply('Hello!');
