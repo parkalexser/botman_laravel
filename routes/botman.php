@@ -27,7 +27,7 @@ $botman->hears('hi', function($bot){
 	$bot->reply('Hello!');
 	$bot->ask('What is your name', function ($answer, $conversation){
 
-        $conversation->receivesContact(function($bot, $contact) {
+        $answer->receivesContact(function($bot, $contact) {
             $phone = $contact->getPhoneNumber();
             $bot->reply('Thank you! Your phone is '.$phone);
         });

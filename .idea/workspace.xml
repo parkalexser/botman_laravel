@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="75bd6b39-5889-4969-acc8-9e43492d7f46" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Conversations/MyConversation.php" afterPath="$PROJECT_DIR$/app/Conversations/MyConversation.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/botman.php" afterPath="$PROJECT_DIR$/routes/botman.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +19,8 @@
       <file leaf-file-name="botman.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/botman.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state relative-caret-position="435">
+              <caret line="29" column="15" lean-forward="false" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
               <folding>
                 <element signature="e#6#48#0#PHP" expanded="true" />
               </folding>
@@ -30,8 +31,8 @@
       <file leaf-file-name="MyConversation.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Conversations/MyConversation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="49" lean-forward="true" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+            <state relative-caret-position="570">
+              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding>
                 <element signature="e#37#70#0#PHP" expanded="true" />
               </folding>
@@ -42,8 +43,8 @@
       <file leaf-file-name="BotMan.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/botman/botman/src/BotMan.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="727">
-              <caret line="351" column="35" lean-forward="false" selection-start-line="351" selection-start-column="20" selection-end-line="351" selection-end-column="35" />
+            <state relative-caret-position="283">
+              <caret line="540" column="23" lean-forward="false" selection-start-line="540" selection-start-column="20" selection-end-line="540" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -113,7 +114,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>s</find>
       <find>se</find>
       <find>sendContact</find>
       <find>buildServicePayload</find>
@@ -139,6 +139,11 @@
       <find>DriverManager::loadDriver</find>
       <find>DriverServiceProvider</find>
       <find>receivesImages</find>
+      <find>as</find>
+      <find>ask(</find>
+      <find>hears</find>
+      <find>ask</find>
+      <find>say</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -147,8 +152,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Conversations/MyConversation.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/app/Conversations/MyConversation.php" />
         <option value="$PROJECT_DIR$/routes/botman.php" />
       </list>
     </option>
@@ -441,12 +446,12 @@
       <option name="presentableId" value="Default" />
       <updated>1620706446837</updated>
       <workItem from="1620706448543" duration="22409000" />
-      <workItem from="1620795599507" duration="6555000" />
+      <workItem from="1620795599507" duration="7744000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28964000" />
+    <option name="totallyTimeSpent" value="30153000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -458,8 +463,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18283582" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -470,7 +474,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.84" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.84" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -765,14 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/botman/botman/src/BotMan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="727">
-          <caret line="351" column="35" lean-forward="false" selection-start-line="351" selection-start-column="20" selection-end-line="351" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/botman/botman/src/Messages/Attachments/Contact.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -781,10 +777,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/botman/botman/src/BotMan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="540" column="23" lean-forward="false" selection-start-line="540" selection-start-column="20" selection-end-line="540" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Conversations/MyConversation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="49" lean-forward="true" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+        <state relative-caret-position="570">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
             <element signature="e#37#70#0#PHP" expanded="true" />
           </folding>
@@ -793,8 +797,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/botman.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state relative-caret-position="435">
+          <caret line="29" column="15" lean-forward="false" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
           <folding>
             <element signature="e#6#48#0#PHP" expanded="true" />
           </folding>
