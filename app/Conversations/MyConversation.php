@@ -22,18 +22,20 @@ class MyConversation extends Conversation
                 Button::create('No')->value(0),
             ]);
 
-        $this->receivesContact(function ($bot, $contact){
-            $bot->reply(\BotMan\BotMan\Messages\Outgoing\OutgoingMessage::create('I received')->withAttachment($contact[0]));
-        });
+
 
         $this->ask($question, function ($answer){
-//            $this->say($answer->getValue());
-            if($answer->getValue() == 1){
-                $user = $this->bot->getUser();
-                $this->say(print_r($user->getInfo(), true));
-            }else{
-                $this->say('you pressed - '.$answer->getValue());
-            }
+
+            $this->receivesContact(function ($bot, $contact){
+                $bot->reply(\BotMan\BotMan\Messages\Outgoing\OutgoingMessage::create('I received')->withAttachment($contact[0]));
+            });
+
+//            if($answer->getValue() == 1){
+//                $user = $this->bot->getUser();
+//                $this->say(print_r($user->getInfo(), true));
+//            }else{
+//                $this->say('you pressed - '.$answer->getValue());
+//            }
 
         });
     }

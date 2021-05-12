@@ -11,7 +11,7 @@ $botman = resolve('botman');
 $botman->hears('hi', function($bot){
 	$bot->reply('Hello!');
 	$bot->ask('What is your name', function ($answer, $conversation){
-        $conversation->say($answer);
+        $conversation->say('Thank you '. $answer->getText());
     },
         Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
            ->oneTimeKeyboard(true)
