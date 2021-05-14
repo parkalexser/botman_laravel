@@ -175,6 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         \BotMan\Drivers\Telegram\Providers\TelegramServiceProvider::class,
+        \BotMan\Drivers\Web\Providers\WebServiceProvider::class,
 
     ],
 

@@ -4,8 +4,11 @@ namespace App\Conversations;
 
 use BotMan\BotMan\Facades\BotMan;
 use BotMan\BotMan\Messages\Conversations\Conversation;
+use BotMan\BotMan\Messages\Incoming\Answer;
 use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 use BotMan\BotMan\Messages\Outgoing\Question;
+use BotMan\BotMan\Messages\Attachments\Image;
+
 
 class MyConversation extends Conversation
 {
@@ -16,27 +19,38 @@ class MyConversation extends Conversation
      */
     public function run()
     {
-        $question = Question::create('Get info?')
-            ->addButtons([
-                Button::create('Yes')->value(1),
-                Button::create('No')->value(0),
-            ]);
-
-
-
-        $this->ask($question, function ($answer){
-
-//            $this->receivesContact(function ($bot, $contact){
-//                $bot->reply(\BotMan\BotMan\Messages\Outgoing\OutgoingMessage::create('I received')->withAttachment($contact[0]));
-//            });
-
-            if($answer->getValue() == 1){
-                $user = $this->bot->getUser();
-                $this->say(print_r($user->getInfo(), true));
-            }else{
-                $this->say('you pressed - '.$answer->getValue());
-            }
-
+        $this->say('Hello');
+        $this->receivesContact(function($bot, $contact) {
+            $phone = $contact->getPhoneNumber();
+            $bot->say('Thank you! Your phone is '.$phone);
         });
+        // $this->say('hhh');
+        // $this->askForImages('send photo', function( $images ) {
+        //     foreach ($images as $image) {
+        //         $url = $image->getUrl(); // The direct url
+        //         $title = $image->getTitle(); // The title, if available
+        //         $payload = $image->getPayload(); // The original payload
+        //         $this->say($url);
+        //     }
+        // });
+
+//        $question = Question::create('Get info?')
+//            ->addButtons([
+//                Button::create('Yes')->value(1),
+//                Button::create('No')->value(0),
+//            ]);
+//
+//        $this->ask($question, function ($answer){
+//
+//            if($answer->getValue() == 1){
+//                $user = $this->bot->getUser();
+//                $this->say(print_r($user->getInfo(), true));
+//            }else{
+//                $this->say('you pressed - '.$answer->getValue());
+//            }
+//
+//        });
     }
 }
+
+

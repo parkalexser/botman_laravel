@@ -20,6 +20,10 @@ $botman->receivesImages(function($bot,$images) {
     }
 });
 
+$botman->receivesContact(function($bot, $contact) {
+    $phone = $contact->getPhoneNumber();
+    $bot->reply('Thank you! Your phone is '.$phone);
+});
 
 
 
@@ -27,10 +31,7 @@ $botman->hears('hi', function($bot){
 	$bot->reply('Hello!');
 	$bot->ask('What is your name', function ($answer, $conversation){
 
-        $answer->receivesContact(function($bot, $contact) {
-            $phone = $contact->getPhoneNumber();
-            $bot->reply('Thank you! Your phone is '.$phone);
-        });
+
     },
         Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
            ->oneTimeKeyboard(true)
@@ -42,7 +43,7 @@ $botman->hears('hi', function($bot){
     );
 });
 
-$botman->hears('info', function ($bot) {
+$botman->hears('my', function ($bot) {
     $bot->startConversation(new \App\Conversations\MyConversation());
 });
 
