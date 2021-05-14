@@ -16,7 +16,7 @@ class MainConversation extends Conversation
      */
     public function run()
     {
-    	$this->say('Hello! Welcome to appointment BOT!:hear_no_evil:');
+    	$this->say('Hello! Welcome to appointment BOT! \xF0\x9F\x87\xB7\xF0\x9F\x87\xBA');
         Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
            ->oneTimeKeyboard(true)
            ->resizeKeyboard(true)
