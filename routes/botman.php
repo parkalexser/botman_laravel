@@ -10,37 +10,37 @@ $botman = resolve('botman');
 // $botman = app('botman');
 
 
-$botman->receivesImages(function($bot,$images) {
-    foreach ($images as $image) {
+// $botman->receivesImages(function($bot,$images) {
+//     foreach ($images as $image) {
 
-        $url = $image->getUrl(); // The direct url
-        $title = $image->getTitle(); // The title, if available
-        $payload = $image->getPayload(); // The original payload
-        $bot->reply($url);
-    }
-});
+//         $url = $image->getUrl(); // The direct url
+//         $title = $image->getTitle(); // The title, if available
+//         $payload = $image->getPayload(); // The original payload
+//         $bot->reply($url);
+//     }
+// });
 
-$botman->receivesContact(function($bot, $contact) {
-    $phone = $contact->getPhoneNumber();
-    $bot->reply('Thank you! Your phone is '.$phone);
-});
+// $botman->receivesContact(function($bot, $contact) {
+//     $phone = $contact->getPhoneNumber();
+//     $bot->reply('Thank you! Your phone is '.$phone);
+// });
 
 
 
 $botman->hears('hi', function($bot){
 	$bot->reply('Hello!');
-	$bot->ask('What is your name', function ($answer, $conversation){
+// 	$bot->ask('What is your name', function ($answer, $conversation){
 
 
-    },
-        Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
-           ->oneTimeKeyboard(true)
-           ->resizeKeyboard(true)
-           ->addRow(
-               KeyboardButton::create("Send contact")->callbackData('contact')->requestContact(true)
-           )
-           ->toArray()
-    );
+//     },
+//         Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
+//            ->oneTimeKeyboard(true)
+//            ->resizeKeyboard(true)
+//            ->addRow(
+//                KeyboardButton::create("Send contact")->callbackData('contact')->requestContact(true)
+//            )
+//            ->toArray()
+//     );
 });
 
 $botman->hears('my', function ($bot) {
