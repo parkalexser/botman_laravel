@@ -9,6 +9,10 @@ use BotMan\BotMan\Messages\Attachments\Image;
 $botman = resolve('botman');
 // $botman = app('botman');
 
+$botman->hears('/start', function ($bot) {
+    $bot->startConversation(new \App\Conversations\MainConversation());
+});
+
 
 // $botman->receivesImages(function($bot,$images) {
 //     foreach ($images as $image) {

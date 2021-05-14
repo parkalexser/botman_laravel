@@ -20,7 +20,7 @@ class MyConversation extends Conversation
      */
     public function run()
     {
-        $this->say('Hello');
+        $this->say('Hello!');
         $this->askForContact('send contacts', function($contact) {
             $phone = $contact->getPhoneNumber();
             $this->say('Thank you! Your phone is '.$phone);
