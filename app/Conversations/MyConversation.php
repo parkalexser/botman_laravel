@@ -21,9 +21,9 @@ class MyConversation extends Conversation
     public function run()
     {
         $this->say('Hello');
-        $this->askForContact('send contacts', function($bot, $contact) {
+        $this->askForContact('send contacts', function($contact) {
             $phone = $contact->getPhoneNumber();
-            $bot->say('Thank you! Your phone is '.$phone);
+            $this->say('Thank you! Your phone is '.$phone);
         });
         // $this->say('hhh');
         // $this->askForImages('send photo', function( $images ) {
