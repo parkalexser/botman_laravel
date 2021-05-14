@@ -8,6 +8,7 @@ use BotMan\BotMan\Messages\Incoming\Answer;
 use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 use BotMan\BotMan\Messages\Outgoing\Question;
 use BotMan\BotMan\Messages\Attachments\Image;
+use BotMan\BotMan\Messages\Attachments\File;
 
 
 class MyConversation extends Conversation
@@ -20,7 +21,7 @@ class MyConversation extends Conversation
     public function run()
     {
         $this->say('Hello');
-        $this->receivesContact(function($bot, $contact) {
+        $this->askForContact('send contacts', function($bot, $contact) {
             $phone = $contact->getPhoneNumber();
             $bot->say('Thank you! Your phone is '.$phone);
         });
