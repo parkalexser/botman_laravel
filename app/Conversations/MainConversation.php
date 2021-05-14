@@ -16,7 +16,12 @@ class MainConversation extends Conversation
      */
     public function run()
     {
-    	$this->say('Hello! Welcome to appointment BOT!', $this->mainKeyboard());
+    	$this->say('Hello! Welcome to appointment BOT!',
+    		function ($response) {
+	        	$this->say('Cool - you said ' . $response->getText());
+		    },
+	    	$this->mainKeyboard()
+	    );
 
 
 
