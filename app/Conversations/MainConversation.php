@@ -20,39 +20,44 @@ class MainConversation extends Conversation
     public function run()
     {
 
-
-
     	$this->ask('Hello! Welcome to appointment BOT!',
     		function ($response) {
-	        	$this->say('Cool - you said ' . $response->getText());
-	        	$this->say('Cool - you callback ' . $response->getValue());
 
-    	    	$question = Question::create("Choose language")
-		            ->fallback('Unable to ask question')
-		            ->callbackId('ask_reason')
-		            ->addButtons([
-		                Button::create('Русский')->value('rus'),
-		                Button::create('English')->value('eng'),
-		            ]);
+    			if($response->getText() == 'Language'){
+    				$this->say('Set your ' . $response->getText());
+		        	// $this->say('Cool - you callback ' . $response->getValue());
+    				$this->setLang();
+    			}
 
-	            $this->ask($question, function (Answer $answer) {
-		            if ($answer->isInteractiveMessageReply()) {
-		                if ($answer->getValue() === 'rus') {
-		                    $this->say('Вы выбрали русский язык');
-		                } else {
-		                    $this->say('You choice is English');
-		                }
-		            }
-		        });
 		    },
 	    	$this->mainKeyboard()
 	    );
 
-
-
     }
 
-    private function mainKeyboard(){
+    private function setLang()
+    {
+    	$question = Question::create("Choose language"."\u{1F1F7}\u{1F1FA}"." / "."\u{1F1FA}\u{1F1F2}")
+            ->fallback('Unable to ask question')
+            ->callbackId('ask_reason')
+            ->addButtons([
+                Button::create('Русский')->value('rus'),
+                Button::create('English')->value('eng'),
+            ]);
+
+        return $this->ask($question, function (Answer $answer) {
+            if ($answer->isInteractiveMessageReply()) {
+                if ($answer->getValue() === 'rus') {
+                    $this->say('Вы выбрали русский язык');
+                } else {
+                    $this->say('You choice is English');
+                }
+            }
+        });
+    }
+
+    private function mainKeyboard()
+    {
     	return Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
 			->oneTimeKeyboard(true)
 			->resizeKeyboard(true)
