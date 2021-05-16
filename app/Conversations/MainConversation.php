@@ -19,6 +19,7 @@ class MainConversation extends Conversation
     	$this->ask('Hello! Welcome to appointment BOT!',
     		function ($response) {
 	        	$this->say('Cool - you said ' . $response->getText());
+	        	$this->say('Cool - you said ' . $response->getValue());
 		    },
 	    	$this->mainKeyboard()
 	    );
