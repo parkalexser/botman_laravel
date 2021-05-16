@@ -19,19 +19,31 @@ class MainConversation extends Conversation
      */
     public function run()
     {
-    	// $question = Question::create("Huh - you woke me up. What do you need?")
-     //        ->fallback('Unable to ask question')
-     //        ->callbackId('ask_reason')
-     //        ->addButtons([
-     //            Button::create('Tell a joke')->value('joke'),
-     //            Button::create('Give me a fancy quote')->value('quote'),
-     //        ]);
+
 
 
     	$this->ask('Hello! Welcome to appointment BOT!',
-    		function (Answer $response) {
+    		function ($response) {
 	        	$this->say('Cool - you said ' . $response->getText());
 	        	$this->say('Cool - you callback ' . $response->getValue());
+
+    	    	$question = Question::create("Choose language")
+		            ->fallback('Unable to ask question')
+		            ->callbackId('ask_reason')
+		            ->addButtons([
+		                Button::create('Русский')->value('rus'),
+		                Button::create('English')->value('eng'),
+		            ]);
+
+	            $this->ask($question, function (Answer $answer) {
+		            if ($answer->isInteractiveMessageReply()) {
+		                if ($answer->getValue() === 'rus') {
+		                    $this->say('Вы выбрали русский язык');
+		                } else {
+		                    $this->say('You choice is English');
+		                }
+		            }
+		        });
 		    },
 	    	$this->mainKeyboard()
 	    );
