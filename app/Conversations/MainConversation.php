@@ -37,7 +37,7 @@ class MainConversation extends Conversation
 
     private function setLang()
     {
-    	$question = Question::create("Choose language"."\u{1F1F7}\u{1F1FA}"." / "."\u{1F1FA}\u{1F1F2}")
+    	$question = Question::create("Choose language"."\u{1F1F7}\u{1F1FA}"." / "."\u{1F1FA}\u{1F1F8}"." / "."\u{1F1FA}\u{1F1FF}")
             ->fallback('Unable to ask question')
             ->callbackId('ask_reason')
             ->addButtons([
