@@ -22,8 +22,8 @@ class MainConversation extends Conversation
 
     	$this->ask('Hello! Welcome to appointment BOT!',
     		function ($response) {
-                $this->say(print_r($response, true));
-    			if($response->getText() == 'Language'){
+
+    			if($response->getText() === 'Language'){
     				$this->say('Set your ' . $response->getText());
 		        	// $this->say('Cool - you callback ' . $response->getValue());
     				$this->setLang();
@@ -63,6 +63,7 @@ class MainConversation extends Conversation
 			->oneTimeKeyboard(true)
 			->resizeKeyboard(true)
 			->addRow(
+                KeyboardButton::create("Booking")->callbackData('booking'),
 				KeyboardButton::create("Language")->callbackData('language')
        		)
             ->toArray();
