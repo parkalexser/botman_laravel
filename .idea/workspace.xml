@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="75bd6b39-5889-4969-acc8-9e43492d7f46" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Conversations/MainConversation.php" afterPath="$PROJECT_DIR$/app/Conversations/MainConversation.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,21 +14,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainConversation.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainConversation.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Conversations/MainConversation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="61" column="19" lean-forward="true" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
+            <state relative-caret-position="750">
+              <caret line="64" column="21" lean-forward="true" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Keyboard.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Keyboard.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/botman/driver-telegram/src/Extensions/Keyboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="80" column="33" lean-forward="true" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+            <state relative-caret-position="682">
+              <caret line="92" column="43" lean-forward="true" selection-start-line="92" selection-start-column="43" selection-end-line="92" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -404,12 +403,12 @@
       <updated>1620706446837</updated>
       <workItem from="1620706448543" duration="22409000" />
       <workItem from="1620795599507" duration="17959000" />
-      <workItem from="1621222231323" duration="2433000" />
+      <workItem from="1621222231323" duration="2795000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42801000" />
+    <option name="totallyTimeSpent" value="43163000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -740,18 +739,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Conversations/MainConversation.php">
+    <entry file="file://$PROJECT_DIR$/vendor/botman/driver-telegram/src/Extensions/Keyboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="61" column="19" lean-forward="true" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
+        <state relative-caret-position="682">
+          <caret line="92" column="43" lean-forward="true" selection-start-line="92" selection-start-column="43" selection-end-line="92" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/botman/driver-telegram/src/Extensions/Keyboard.php">
+    <entry file="file://$PROJECT_DIR$/app/Conversations/MainConversation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="80" column="33" lean-forward="true" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+        <state relative-caret-position="750">
+          <caret line="64" column="21" lean-forward="true" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
           <folding />
         </state>
       </provider>

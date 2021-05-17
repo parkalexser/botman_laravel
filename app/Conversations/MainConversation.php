@@ -63,8 +63,14 @@ class MainConversation extends Conversation
 			->oneTimeKeyboard(true)
 			->resizeKeyboard(true)
 			->addRow(
-                KeyboardButton::create("Booking")->callbackData('booking'),
-				KeyboardButton::create("Language")->callbackData('language')
+			    [
+                    KeyboardButton::create("Booking")->callbackData('booking'),
+                    KeyboardButton::create("Language")->callbackData('language')
+                ],
+                [
+                    KeyboardButton::create("Settings")->callbackData('settings')
+                ]
+
        		)
             ->toArray();
     }
