@@ -22,7 +22,7 @@ class MainConversation extends Conversation
 
     	$this->ask('Hello! Welcome to appointment BOT!',
     		function ($response) {
-
+                $this->say(print_r($response, true));
     			if($response->getText() == 'Language'){
     				$this->say('Set your ' . $response->getText());
 		        	// $this->say('Cool - you callback ' . $response->getValue());
@@ -46,6 +46,7 @@ class MainConversation extends Conversation
             ]);
 
         return $this->ask($question, function (Answer $answer) {
+
             if ($answer->isInteractiveMessageReply()) {
                 if ($answer->getValue() === 'rus') {
                     $this->say('Вы выбрали русский язык');
