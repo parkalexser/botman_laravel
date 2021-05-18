@@ -25,8 +25,18 @@ class MainConversation extends Conversation
     			if($response->getText() === 'Language'){
     				// $this->say('Set your ' . $response->getText());
 		        	// $this->say('Cool - you callback ' . $response->getValue());
-    				$this->setLang();
-    			}
+    				// $this->setLang();
+
+
+    			}elseif($response->getText() === "Settings"){
+                    $this->ask('Here you can setting your profile', function($responseSettings){
+                        if($responseSettings->getValue() == 'language'){
+                            $this->setLang();
+                        }elseif($responseSettings->getValue() == 'back'){
+                            $this->say('Back to page');
+                        }
+                    }, $this->settingKeyboard() );
+                }
 
 		    },
 	    	$this->mainKeyboard()
@@ -76,6 +86,18 @@ class MainConversation extends Conversation
 			->addRow(
                 KeyboardButton::create("Settings")->callbackData('settings')
        		)
+            ->toArray();
+    }
+
+    private function settingKeyboard()
+    {
+        return Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
+            ->oneTimeKeyboard(true)
+            ->resizeKeyboard(true)
+            ->addRow(
+                KeyboardButton::create("Back")->callbackData('back'),
+                KeyboardButton::create("Language")->callbackData('language')
+            )
             ->toArray();
     }
 
