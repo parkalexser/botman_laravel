@@ -28,13 +28,13 @@ class MainConversation extends Conversation
 
 
     			}elseif($response->getText() === "Settings"){
-                    $this->ask('Here you can setting your profile', function(Answer $responseSettings){
-                        if($responseSettings->getValue() === 'language'){
+                    $this->ask('Here you can setting your profile', function($responseSettings){
+                        if($responseSettings->getText() === 'Language'){
                             $this->setLang();
-                        }elseif($responseSettings->getValue() == 'back'){
+                        }elseif($responseSettings->getText() == 'Back'){
                             $this->say('Back to page');
                         }
-                        $this->say(print_r($responseSettings, true));
+
                     }, $this->settingKeyboard() );
                 }
 
