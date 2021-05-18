@@ -19,7 +19,6 @@ class MainConversation extends Conversation
      */
     public function run()
     {
-
     	$this->ask('Hello! Welcome to appointment BOT!',
     		function ($response) {
 
@@ -40,6 +39,9 @@ class MainConversation extends Conversation
     	$question = Question::create("Choose language"."\u{1F1F7}\u{1F1FA}"." / "."\u{1F1FA}\u{1F1F8}"." / "."\u{1F1FA}\u{1F1FF}")
             ->fallback('Unable to ask question')
             ->callbackId('ask_reason')
+            ->addButton(
+                Button::create('Ozbek')->value('ozb'),
+            )
             ->addButtons([
                 Button::create('Русский')->value('rus'),
                 Button::create('English')->value('eng'),
@@ -62,13 +64,16 @@ class MainConversation extends Conversation
     	return Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
 			->oneTimeKeyboard(true)
 			->resizeKeyboard(true)
-			->addRow(
-                KeyboardButton::create("Booking")->callbackData('booking'),
-                KeyboardButton::create("Language")->callbackData('language')
-       		)
             ->addRow(
-                KeyboardButton::create("Settings")->callbackData('settings')
+                KeyboardButton::create("Book")->callbackData('book')
             )
+            ->addRow(
+                KeyboardButton::create("My favorite")->callbackData('my_favorite')
+            )
+			->addRow(
+                KeyboardButton::create("Settings")->callbackData('settings')
+       		)
+
             ->toArray();
     }
 }
