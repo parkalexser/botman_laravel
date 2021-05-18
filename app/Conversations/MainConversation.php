@@ -23,7 +23,7 @@ class MainConversation extends Conversation
     		function ($response) {
 
     			if($response->getText() === 'Language'){
-    				$this->say('Set your ' . $response->getText());
+    				// $this->say('Set your ' . $response->getText());
 		        	// $this->say('Cool - you callback ' . $response->getValue());
     				$this->setLang();
     			}
@@ -48,17 +48,18 @@ class MainConversation extends Conversation
      //        ]);
 
 
-        return $this->ask('Choose language', function (Answer $answer) {
+        return $this->ask('Set your ' . $response->getText(), function (Answer $answer) {
 
             if ($answer->isInteractiveMessageReply()) {
                 if ($answer->getValue() === 'rus') {
                     $this->say('Вы выбрали русский язык');
-                } else {
+                } elseif($answer->getValue() === 'eng') {
                     $this->say('You choice is English');
+                } elseif($answer->getValue() === 'ozb') {
+                    $this->say('Ozbekcha');
                 }
             }
-        }, $this->inlineKeyboard()
-        );
+        }, $this->inlineKeyboard() );
     }
 
     private function mainKeyboard()
@@ -82,13 +83,11 @@ class MainConversation extends Conversation
     {
         return Keyboard::create()->type( Keyboard::TYPE_INLINE )
             // ->oneTimeKeyboard(true)
-            // ->resizeKeyboard(true)
+            ->resizeKeyboard(true)
             ->addRow(
-                KeyboardButton::create("Test1")->callbackData('test1'),
-                KeyboardButton::create("Test2")->callbackData('test2'),
-            )
-            ->addRow(
-                KeyboardButton::create("test3")->callbackData('test3')
+                KeyboardButton::create("\u{1F1F7}\u{1F1FA}")->callbackData('rus'),
+                KeyboardButton::create("\u{1F1FA}\u{1F1F8}")->callbackData('eng'),
+                KeyboardButton::create("\u{1F1FA}\u{1F1FF}")->callbackData('ozb')
             )
             ->toArray();
     }
