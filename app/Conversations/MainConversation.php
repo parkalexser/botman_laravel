@@ -46,11 +46,9 @@ class MainConversation extends Conversation
      //            Button::create('Русский')->value('rus'),
      //            Button::create('English')->value('eng'),
      //        ]);
-        $question = Question::create("Choose language"."\u{1F1F7}\u{1F1FA}"." / "."\u{1F1FA}\u{1F1F8}"." / "."\u{1F1FA}\u{1F1FF}")
-            ->fallback('Unable to ask question')
-            ->callbackId('ask_reason')
 
-        return $this->ask($question, function (Answer $answer) {
+
+        return $this->ask('Choose language', function (Answer $answer) {
 
             if ($answer->isInteractiveMessageReply()) {
                 if ($answer->getValue() === 'rus') {
@@ -59,16 +57,7 @@ class MainConversation extends Conversation
                     $this->say('You choice is English');
                 }
             }
-        },Keyboard::create()->type( Keyboard::TYPE_INLINE )
-            ->oneTimeKeyboard(true)
-            ->resizeKeyboard(true)
-            ->addRow(
-                KeyboardButton::create("Test1")->callbackData('test1'),
-                KeyboardButton::create("Test2")->callbackData('test2'),
-            )
-            ->addRow(
-                KeyboardButton::create("test3")->callbackData('test3')
-            )
+        }, $this->inlineKeyboard()
         );
     }
 
@@ -86,6 +75,21 @@ class MainConversation extends Conversation
 			->addRow(
                 KeyboardButton::create("Settings")->callbackData('settings')
        		)
+            ->toArray();
+    }
+
+    private function inlineKeyboard()
+    {
+        return Keyboard::create()->type( Keyboard::TYPE_INLINE )
+            // ->oneTimeKeyboard(true)
+            // ->resizeKeyboard(true)
+            ->addRow(
+                KeyboardButton::create("Test1")->callbackData('test1'),
+                KeyboardButton::create("Test2")->callbackData('test2'),
+            )
+            ->addRow(
+                KeyboardButton::create("test3")->callbackData('test3')
+            )
             ->toArray();
     }
 }
