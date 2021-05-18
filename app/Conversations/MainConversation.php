@@ -48,7 +48,7 @@ class MainConversation extends Conversation
      //        ]);
 
 
-        return $this->ask('Set your ' . $response->getText(), function (Answer $answer) {
+        return $this->ask('Set your language', function (Answer $answer) {
 
             if ($answer->isInteractiveMessageReply()) {
                 if ($answer->getValue() === 'rus') {
