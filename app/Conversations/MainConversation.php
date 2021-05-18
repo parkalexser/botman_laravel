@@ -19,8 +19,7 @@ class MainConversation extends Conversation
      */
     public function run()
     {
-    	$this->ask('Hello! Welcome to appointment BOT!',
-    		function ($response) {
+    	$this->ask('Hello! Welcome to appointment BOT!', function ($response) {
 
     			if($response->getText() === 'Language'){
     				// $this->say('Set your ' . $response->getText());
@@ -29,12 +28,13 @@ class MainConversation extends Conversation
 
 
     			}elseif($response->getText() === "Settings"){
-                    $this->ask('Here you can setting your profile', function($responseSettings){
-                        if($responseSettings->getValue() == 'language'){
+                    $this->ask('Here you can setting your profile', function(Answer $responseSettings){
+                        if($responseSettings->getValue() === 'language'){
                             $this->setLang();
                         }elseif($responseSettings->getValue() == 'back'){
                             $this->say('Back to page');
                         }
+                        $this->say(print_r($responseSettings, true));
                     }, $this->settingKeyboard() );
                 }
 
@@ -75,7 +75,7 @@ class MainConversation extends Conversation
     private function mainKeyboard()
     {
     	return Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
-			->oneTimeKeyboard(true)
+			->oneTimeKeyboard()
 			->resizeKeyboard(true)
             ->addRow(
                 KeyboardButton::create("Book")->callbackData('book')
@@ -92,7 +92,7 @@ class MainConversation extends Conversation
     private function settingKeyboard()
     {
         return Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
-            ->oneTimeKeyboard(true)
+            ->oneTimeKeyboard()
             ->resizeKeyboard(true)
             ->addRow(
                 KeyboardButton::create("Back")->callbackData('back'),
