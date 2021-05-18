@@ -82,7 +82,7 @@ class MainConversation extends Conversation
     private function inlineKeyboard()
     {
         return Keyboard::create()->type( Keyboard::TYPE_INLINE )
-            // ->oneTimeKeyboard(true)
+            ->oneTimeKeyboard(false)
             ->resizeKeyboard(true)
             ->addRow(
                 KeyboardButton::create("\u{1F1F7}\u{1F1FA}")->callbackData('rus'),
