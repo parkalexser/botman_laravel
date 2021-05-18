@@ -36,16 +36,19 @@ class MainConversation extends Conversation
 
     private function setLang()
     {
-    	$question = Question::create("Choose language"."\u{1F1F7}\u{1F1FA}"." / "."\u{1F1FA}\u{1F1F8}"." / "."\u{1F1FA}\u{1F1FF}")
+    	// $question = Question::create("Choose language"."\u{1F1F7}\u{1F1FA}"." / "."\u{1F1FA}\u{1F1F8}"." / "."\u{1F1FA}\u{1F1FF}")
+     //        ->fallback('Unable to ask question')
+     //        ->callbackId('ask_reason')
+     //        ->addButton(
+     //            Button::create('Ozbek')->value('ozb'),
+     //        )
+     //        ->addButtons([
+     //            Button::create('Русский')->value('rus'),
+     //            Button::create('English')->value('eng'),
+     //        ]);
+        $question = Question::create("Choose language"."\u{1F1F7}\u{1F1FA}"." / "."\u{1F1FA}\u{1F1F8}"." / "."\u{1F1FA}\u{1F1FF}")
             ->fallback('Unable to ask question')
             ->callbackId('ask_reason')
-            ->addButton(
-                Button::create('Ozbek')->value('ozb'),
-            )
-            ->addButtons([
-                Button::create('Русский')->value('rus'),
-                Button::create('English')->value('eng'),
-            ]);
 
         return $this->ask($question, function (Answer $answer) {
 
@@ -56,7 +59,17 @@ class MainConversation extends Conversation
                     $this->say('You choice is English');
                 }
             }
-        });
+        },Keyboard::create()->type( Keyboard::TYPE_INLINE )
+            ->oneTimeKeyboard(true)
+            ->resizeKeyboard(true)
+            ->addRow(
+                KeyboardButton::create("Test1")->callbackData('test1'),
+                KeyboardButton::create("Test2")->callbackData('test2'),
+            )
+            ->addRow(
+                KeyboardButton::create("test3")->callbackData('test3')
+            )
+        );
     }
 
     private function mainKeyboard()
@@ -73,7 +86,6 @@ class MainConversation extends Conversation
 			->addRow(
                 KeyboardButton::create("Settings")->callbackData('settings')
        		)
-
             ->toArray();
     }
 }
