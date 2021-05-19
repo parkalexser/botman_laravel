@@ -19,17 +19,16 @@ class MainConversation extends Conversation
      */
     public function run()
     {
+        $this->say('Welcome to appointment BOT!');
     	$this->mainAsk();
     }
 
     private function mainAsk(){
-        $this->ask('Hello! Welcome to appointment BOT!', function ($response) {
+        $this->ask('Choose your option', function ($response) {
 
-                if($response->getText() === 'Language'){
-                    // $this->say('Set your ' . $response->getText());
-                    // $this->say('Cool - you callback ' . $response->getValue());
-                    // $this->setLang();
+                if($response->getText() === 'Book'){
 
+                }elseif($response->getText() === "My favorite"){
 
                 }elseif($response->getText() === "Settings"){
                     $this->chooseSettings();
@@ -53,7 +52,7 @@ class MainConversation extends Conversation
 
     private function setLang()
     {
-    	// $question = Question::create("Choose language"."\u{1F1F7}\u{1F1FA}"." / "."\u{1F1FA}\u{1F1F8}"." / "."\u{1F1FA}\u{1F1FF}")
+     // $question = Question::create("Choose language"."\u{1F1F7}\u{1F1FA}"." / "."\u{1F1FA}\u{1F1F8}"." / "."\u{1F1FA}\u{1F1FF}")
      //        ->fallback('Unable to ask question')
      //        ->callbackId('ask_reason')
      //        ->addButton(
@@ -70,13 +69,15 @@ class MainConversation extends Conversation
             if ($answer->isInteractiveMessageReply()) {
                 if ($answer->getValue() === 'rus') {
                     $this->say('Вы выбрали русский язык');
-                    $this->setLang();
+                    $this->chooseSettings();
                 } elseif($answer->getValue() === 'eng') {
                     $this->say('You choice is English');
-                    $this->setLang();
+                    $this->chooseSettings();
                 } elseif($answer->getValue() === 'ozb') {
                     $this->say('Ozbekcha');
-                    $this->setLang();
+                    $this->chooseSettings();
+                } elseif($answer->getText() === 'Back') {
+                    $this->mainAsk();
                 }
             }
         }, $this->inlineKeyboard() );
