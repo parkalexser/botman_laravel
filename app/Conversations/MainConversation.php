@@ -19,29 +19,36 @@ class MainConversation extends Conversation
      */
     public function run()
     {
-    	$this->ask('Hello! Welcome to appointment BOT!', function ($response) {
+    	$this->mainAsk();
+    }
 
-    			if($response->getText() === 'Language'){
-    				// $this->say('Set your ' . $response->getText());
-		        	// $this->say('Cool - you callback ' . $response->getValue());
-    				// $this->setLang();
+    private function mainAsk(){
+        $this->ask('Hello! Welcome to appointment BOT!', function ($response) {
+
+                if($response->getText() === 'Language'){
+                    // $this->say('Set your ' . $response->getText());
+                    // $this->say('Cool - you callback ' . $response->getValue());
+                    // $this->setLang();
 
 
-    			}elseif($response->getText() === "Settings"){
-                    $this->ask('Here you can setting your profile', function($responseSettings){
-                        if($responseSettings->getText() === 'Language'){
-                            $this->setLang();
-                        }elseif($responseSettings->getText() == 'Back'){
-                            $this->say('Back to page');
-                        }
-
-                    }, $this->settingKeyboard() );
+                }elseif($response->getText() === "Settings"){
+                    $this->chooseSettings();
                 }
 
-		    },
-	    	$this->mainKeyboard()
-	    );
+            },
+            $this->mainKeyboard()
+        );
+    }
 
+    private function chooseSettings(){
+        $this->ask('Here you can setting your profile', function($responseSettings){
+            if($responseSettings->getText() === 'Language'){
+                $this->setLang();
+            }elseif($responseSettings->getText() == 'Back'){
+                $this->mainAsk();
+            }
+
+        }, $this->settingKeyboard() );
     }
 
     private function setLang()
@@ -58,20 +65,26 @@ class MainConversation extends Conversation
      //        ]);
 
 
-        return $this->ask('Set your language', function (Answer $answer) {
+        $this->ask('Set your language', function (Answer $answer) {
 
             if ($answer->isInteractiveMessageReply()) {
                 if ($answer->getValue() === 'rus') {
                     $this->say('Вы выбрали русский язык');
+                    $this->mainAsk();
                 } elseif($answer->getValue() === 'eng') {
                     $this->say('You choice is English');
+                    $this->mainAsk();
                 } elseif($answer->getValue() === 'ozb') {
                     $this->say('Ozbekcha');
+                    $this->mainAsk();
                 }
             }
         }, $this->inlineKeyboard() );
     }
 
+
+
+    // Keyboards
     private function mainKeyboard()
     {
     	return Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
