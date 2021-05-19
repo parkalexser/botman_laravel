@@ -75,7 +75,7 @@ class MainConversation extends Conversation
     private function mainKeyboard()
     {
     	return Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
-			->oneTimeKeyboard()
+			->oneTimeKeyboard(false)
 			->resizeKeyboard(true)
             ->addRow(
                 KeyboardButton::create("Book")->callbackData('book')
@@ -92,7 +92,7 @@ class MainConversation extends Conversation
     private function settingKeyboard()
     {
         return Keyboard::create()->type( Keyboard::TYPE_KEYBOARD )
-            ->oneTimeKeyboard()
+            ->oneTimeKeyboard(false)
             ->resizeKeyboard(true)
             ->addRow(
                 KeyboardButton::create("Back")->callbackData('back'),
