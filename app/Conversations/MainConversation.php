@@ -70,13 +70,13 @@ class MainConversation extends Conversation
             if ($answer->isInteractiveMessageReply()) {
                 if ($answer->getValue() === 'rus') {
                     $this->say('Вы выбрали русский язык');
-                    $this->mainAsk();
+                    $this->setLang();
                 } elseif($answer->getValue() === 'eng') {
                     $this->say('You choice is English');
-                    $this->mainAsk();
+                    $this->setLang();
                 } elseif($answer->getValue() === 'ozb') {
                     $this->say('Ozbekcha');
-                    $this->mainAsk();
+                    $this->setLang();
                 }
             }
         }, $this->inlineKeyboard() );
@@ -117,7 +117,7 @@ class MainConversation extends Conversation
     private function inlineKeyboard()
     {
         return Keyboard::create()->type( Keyboard::TYPE_INLINE )
-            ->oneTimeKeyboard()
+            ->oneTimeKeyboard(true)
             ->resizeKeyboard(true)
             ->addRow(
                 KeyboardButton::create("\u{1F1F7}\u{1F1FA}")->callbackData('rus'),
