@@ -23,7 +23,8 @@ class MainConversation extends Conversation
     	$this->mainAsk();
     }
 
-    private function mainAsk(){
+    private function mainAsk()
+    {
         $this->ask('Choose your option', function ($response) {
 
                 if($response->getText() === 'Book'){
@@ -39,10 +40,13 @@ class MainConversation extends Conversation
         );
     }
 
-    private function chooseSettings(){
+    private function chooseSettings()
+    {
         $this->ask('Here you can setting your profile', function($responseSettings){
             if($responseSettings->getText() === 'Language'){
                 $this->setLang();
+            }elseif($responseSettings->getText() == 'Master profile'){
+                $this->say('Here you can become a master');
             }elseif($responseSettings->getText() == 'Back'){
                 $this->mainAsk();
             }
@@ -66,7 +70,8 @@ class MainConversation extends Conversation
 
         $this->ask('Set your language', function (Answer $answer) {
 
-            if ($answer->isInteractiveMessageReply()) {
+            // if ($answer->isInteractiveMessageReply()) {
+
                 if ($answer->getValue() === 'rus') {
                     $this->say('Вы выбрали русский язык');
                     $this->chooseSettings();
@@ -79,7 +84,7 @@ class MainConversation extends Conversation
                 } elseif($answer->getText() === 'Back') {
                     $this->mainAsk();
                 }
-            }
+            // }
         }, $this->inlineKeyboard() );
     }
 
@@ -111,6 +116,9 @@ class MainConversation extends Conversation
             ->addRow(
                 KeyboardButton::create("Back")->callbackData('back'),
                 KeyboardButton::create("Language")->callbackData('language')
+            )
+            ->addRow(
+                KeyboardButton::create("Master profile")->callbackData('master_profile')
             )
             ->toArray();
     }
