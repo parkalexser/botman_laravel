@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
 Route::get('/botman', 'BotManController@tinker');
-
+Route::get('/test', 'BotManController@test');
 
 // Route::get('/botman', function () {
 //     return view('botman');
