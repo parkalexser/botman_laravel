@@ -100,6 +100,8 @@ class MainConversation extends Conversation
     private function getCalendar(){
          $this->ask('Choose calendar', function (Answer $answer) {
             $this->say(print_r($answer->getValue(), true));
+            $this->say(print_r($answer->getMessage(), true));
+            $this->say(print_r($answer->getMessage()->getPayload(), true));
 
         }, Calendar::create()->type( Keyboard::TYPE_INLINE )
             ->oneTimeKeyboard(false)
