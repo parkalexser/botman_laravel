@@ -102,7 +102,7 @@ class MainConversation extends Conversation
 
 
         }, Calendar::create()->type( Keyboard::TYPE_INLINE )
-            ->oneTimeKeyboard()
+            ->oneTimeKeyboard(false)
             ->resizeKeyboard(true)
             ->addRow(
                 $this->calendar()
