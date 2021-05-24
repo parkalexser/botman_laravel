@@ -11,6 +11,7 @@ return [
     | the chatbot through Telegram.
     |
     */
-    'token' => env('TELEGRAM_TOKEN'),
-    'hideInlineKeyboard' => false
+    'token' => env('TELEGRAM_TOKEN')
+    // ,
+    // 'hideInlineKeyboard' => false
 ];
