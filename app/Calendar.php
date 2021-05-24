@@ -90,7 +90,7 @@ class Calendar
                 $this->type => $this->rows,
                 'one_time_keyboard' => $this->oneTimeKeyboard,
                 'resize_keyboard' => $this->resizeKeyboard,
-            ])),
+            ])->filter()),
         ];
     }
 }

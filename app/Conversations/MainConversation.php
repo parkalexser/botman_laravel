@@ -106,7 +106,7 @@ class MainConversation extends Conversation
             $this->say(print_r($answer->getValue(), true));
 
         }, Calendar::create()->type( Keyboard::TYPE_INLINE )
-            ->oneTimeKeyboard(false)
+            ->oneTimeKeyboard()
             ->resizeKeyboard(true)
             ->addRow(
                 $this->calendar((int)date('m'), (int)date('Y'))
