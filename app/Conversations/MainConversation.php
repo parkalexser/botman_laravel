@@ -97,17 +97,19 @@ class MainConversation extends Conversation
         }, $this->inlineKeyboard() );
     }
 
-    private function getCalendar(){
+    private function getCalendar()
+    {
          $this->ask('Choose calendar', function (Answer $answer) {
-            $this->say(print_r($answer->getMessage()->getPayload(), true));
-            // $this->say(print_r($this->bot->getBotMessages()[0], true));
-            // $this->say($answer->getMessage()->getPayload()['message_id']);
+            // $this->say(print_r($answer->getMessage()->getPayload(), true));
+            $this->say(print_r($answer->getMessage(), true));
+            $this->say(print_r($answer->getValue(), true));
+
 
         }, Calendar::create()->type( Keyboard::TYPE_INLINE )
             ->oneTimeKeyboard(false)
             ->resizeKeyboard(true)
             ->addRow(
-                $this->calendar()
+                $this->calendar((int)date('m'), (int)date('Y'))
             )
             ->toArray()
         );
@@ -161,9 +163,10 @@ class MainConversation extends Conversation
             ->toArray();
     }
 
-    private function calendar(int $month = 5, int $year = 2021){
+    private function calendar(int $month, int $year){
         // printf("Now: %s", Carbon::now());
         // exit;
+        //
         $prevMonthCallback = 'calendar-month-';
         if ($month === 1) {
             $prevMonthCallback .= '12-'.($year-1);
