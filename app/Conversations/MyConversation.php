@@ -21,10 +21,11 @@ class MyConversation extends Conversation
     public function run()
     {
         $this->say('Hello!');
-        $this->askForContact('send contacts', function($contact) {
-            $phone = $contact->getPhoneNumber();
-            $this->say('Thank you! Your phone is '.$phone);
-        });
+        // $this->askForContact('send contacts', function($contact) {
+        //     $phone = $contact->getPhoneNumber();
+        //     $this->say('Thank you! Your phone is '.$phone);
+        // });
+
         // $this->say('hhh');
         // $this->askForImages('send photo', function( $images ) {
         //     foreach ($images as $image) {
@@ -35,22 +36,22 @@ class MyConversation extends Conversation
         //     }
         // });
 
-//        $question = Question::create('Get info?')
-//            ->addButtons([
-//                Button::create('Yes')->value(1),
-//                Button::create('No')->value(0),
-//            ]);
-//
-//        $this->ask($question, function ($answer){
-//
-//            if($answer->getValue() == 1){
-//                $user = $this->bot->getUser();
-//                $this->say(print_r($user->getInfo(), true));
-//            }else{
-//                $this->say('you pressed - '.$answer->getValue());
-//            }
-//
-//        });
+        $question = Question::create('Get info?')
+           ->addButtons([
+               Button::create('Yes')->value(1),
+               Button::create('No')->value(0),
+           ]);
+
+        $this->ask($question, function ($answer){
+
+           if($answer->getValue() == 1){
+               $user = $this->bot->getUser();
+               $this->say(print_r($user->getInfo(), true));
+           }else{
+               $this->say('you pressed - '.$answer->getValue());
+           }
+
+       });
     }
 }
 
