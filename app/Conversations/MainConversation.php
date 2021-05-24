@@ -83,6 +83,7 @@ class MainConversation extends Conversation
 
                 if ($answer->getValue() === 'rus') {
                     $this->say('Вы выбрали русский язык');
+                    $this->say(print_r($answer->getMessage()->getPayload(), true));
                     $this->chooseSettings();
                 } elseif($answer->getValue() === 'eng') {
                     $this->say('You choice is English');
